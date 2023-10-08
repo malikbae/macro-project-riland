@@ -7,6 +7,7 @@
 body {
   background-color: #dedede;
   font-family: "Roboto Condensed", sans-serif !important;
+  margin-bottom: 0;
 }
 
 /* Navbar */
@@ -30,24 +31,42 @@ body {
 
 /* Hero */
 .jumbotron {
-  background-image: url(img/hero-8.webp);
+  background-image: url(img/islamic-psp.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 600px;
   display: flex;
   align-items: center;
   color: var(--text-color-primary) !important;
+  backdrop-filter: blur(50px);
 }
 
-.display-9,
+.jumbotron::before {
+  content: "";
+  background-image: url(img/islamic-psp.jpg);
+  filter: blur(2px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.text-center {
+  margin-bottom: 120px;
+}
+
+.display-1,
 .display-5,
-.display-3 {
-  font-weight: 600 !important;
+.display-9 {
+  font-weight: 400 !important;
   font-family: "Otomanopee One", sans-serif !important;
+  text-shadow: 50px;
 }
 
-.display-3 {
-  font-size: 36px;
+.display-1 {
+  font-size: 50px;
   font-family: "Potta One", sans-serif !important;
 }
 /* End Hero */
@@ -57,9 +76,7 @@ body {
   border-radius: 4px;
   background: #fff;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
-    0.3s box-shadow,
-    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+
   padding: 14px 80px 18px 36px;
   cursor: pointer;
 }
@@ -135,6 +152,13 @@ body {
   color: #6941c6 !important;
 }
 /* End Explore */
+
+/* Pagination */
+.pagination .page-item .page-link:hover {
+  color: var(--text-color-hover);
+  background-color: var(--background);
+}
+/* End Pagination */
 
 /* Footer */
 .footer {
